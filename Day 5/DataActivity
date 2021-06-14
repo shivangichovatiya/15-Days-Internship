@@ -1,0 +1,50 @@
+package com.example.registration;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.TextView;
+
+public class DataActivity extends AppCompatActivity {
+    TextView tvName,tvEmail,tvPW,tvGender,tvNo,tvHobby;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_data);
+
+        tvName=findViewById(R.id.tvName);
+        tvEmail=findViewById(R.id.tvEmail);
+        tvPW=findViewById(R.id.tvPW);
+        tvGender=findViewById(R.id.tvGender);
+        tvNo=findViewById(R.id.tvNo);
+        tvHobby=findViewById(R.id.tvHobby);
+
+
+        Intent intent = getIntent();
+        String nm= intent.getStringExtra("NAME");
+        tvName.setText("Name = "+nm);
+
+        intent = getIntent();
+        String em= intent.getStringExtra("EMAIL");
+        tvEmail.setText("Email = "+em);
+
+        intent = getIntent();
+        String pw= intent.getStringExtra("PASSWORD");
+        tvPW.setText("PW = "+pw);
+
+        intent = getIntent();
+        String gn= intent.getStringExtra("GENDER");
+        tvGender.setText("Gender = "+gn);
+
+        intent = getIntent();
+        String no= intent.getStringExtra("NO");
+        tvNo.setText("No = "+no);
+
+        intent = getIntent();
+        String hb= intent.getStringExtra("HOBBY");
+        tvHobby.setText("Hobby = "+hb);
+
+    }
+}
